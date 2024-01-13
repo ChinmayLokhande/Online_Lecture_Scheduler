@@ -1,0 +1,65 @@
+/* Lecture.css */
+
+
+/* navbar content */
+
+.navbar {
+    height: 30px;
+    background-color: #1b1e1b;
+    color: white;
+    padding: 10px; /* Adjust the padding as needed */
+    text-align: left;
+  }
+
+  .navbar h3 {
+    text-align: left;
+    margin: 0; /* Remove default margin for h3 */
+  }
+
+.lecture-list{
+    display: flex;
+}
+
+.lecture-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  .lecture-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .lecture-card-content {
+    padding: 16px;
+  }
+  
+  .lecture-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+  
+  .lecture-card p {
+    margin: 8px 0;
+    font-size: 0.9em;
+  }
+  
+  .lecture-card-date {
+    color: #555;
+  }
+  
+  .lecture-card-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .lecture-card-link:hover {
+    text-decoration: underline;
+  }
+  
