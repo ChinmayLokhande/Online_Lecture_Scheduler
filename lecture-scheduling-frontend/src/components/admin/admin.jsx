@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Admin.css";
+import "./Admin.css"; // Import your CSS file
 
 function Admin() {
   const [adminUserData, setAdminUserData] = useState([]);
@@ -23,7 +23,7 @@ function Admin() {
       .get("http://localhost:6969/api/admin")
       .then((res) => {
         setAdminUserData(res.data.data);
-        setError(null);
+        setError(null); // Clear any previous errors
       })
       .catch((err) => {
         setError(err.message || "An error occurred");
@@ -34,12 +34,13 @@ function Admin() {
   const handleDropdownChange = (event) => {
     const selectedInstructorName = event.target.value;
     const selectedUser = adminUserData.find((user) => user.username === selectedInstructorName);
-
+  
+    
     setEventForm((prevForm) => ({
       ...prevForm,
       instructor: selectedInstructorName,
     }));
-
+  
     setSelectedUser(selectedUser);
   };
 
@@ -52,16 +53,15 @@ function Admin() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:6969/api/admin/addLecture", { data: eventForm })
+      .post("http://localhost:6969/api/admin/addLecture", { data:eventForm })
       .then((res) => {
-        console.log(res);
         setSuccessMessage('Event created successfully!'); // Set success message
         setError(null); // Clear any previous error
       })
       .catch((err) => setError(err.response.data.error));
   }
 
-  return (
+  return (  
     <div>
       <div className="navbar">
         <h3>Admin Panel</h3>
@@ -98,8 +98,8 @@ function Admin() {
           </div>
         )}
 
-        <form className="event-form">
-        <label>Title:</label>
+        <form className="event-form" >
+          <label>Title:</label>
           <input
             type="text"
             name="title"
@@ -122,28 +122,28 @@ function Admin() {
             name="date"
             value={eventForm.date}
             onChange={handleEventInputChange}
-            className="date-input"
+            class="date-input"
             required
           />
 
-          <div className="label-container">
+          <div class="label-container">
             <label>Start Time:</label>
             <input
               type="time"
               name="startTime"
               value={eventForm.startTime}
               onChange={handleEventInputChange}
-              className="time-input"
+              class="time-input"
               required
             />
           </div>
 
-          <div className="label-container">
+          <div class="label-container">
             <label>End Time:</label>
             <input
               type="time"
               name="endTime"
-              className="time-input"
+              class="time-input"
               onChange={handleEventInputChange}
               value={eventForm.endTime}
               required
@@ -156,7 +156,6 @@ function Admin() {
             value={eventForm.description}
             onChange={handleEventInputChange}
           ></textarea>
-
 
           <button onClick={handleSubmit}>Create Event</button>
         </form>
