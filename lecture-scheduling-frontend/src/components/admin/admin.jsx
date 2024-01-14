@@ -20,7 +20,7 @@ function Admin() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6969/api/admin")
+      .get("https://online-lecture-system.onrender.com/api/admin")
       .then((res) => {
         setAdminUserData(res.data.data);
         setError(null); // Clear any previous errors
@@ -53,7 +53,7 @@ function Admin() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:6969/api/admin/addLecture", { data:eventForm })
+      .post("https://online-lecture-system.onrender.com/api/admin/addLecture", { data:eventForm })
       .then((res) => {
         setSuccessMessage('Event created successfully!'); // Set success message
         setError(null); // Clear any previous error

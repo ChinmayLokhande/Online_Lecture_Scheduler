@@ -22,7 +22,7 @@ const Login = () => {
     event.preventDefault();     
 
     axios
-      .post("http://localhost:6969/api/login", { username, password })
+      .post("https://online-lecture-system.onrender.com/api/login", { username, password })
       .then((res) => {
         setUserData(res.data.data.role);
         setError(null); 

@@ -12,7 +12,7 @@ function Instructor() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6969/api/instructor/${username}`)
+      .get(`https://online-lecture-system.onrender.com/api/instructor/${username}`)
       .then((res) => {
         setLectures(res.data.data);
         setError(null);
